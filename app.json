@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Camocim Delivery - Estabelecimentos",
+    "slug": "PediAquiEstabelecimentos",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "platforms":[
+      "ios",
+      "android"
+    ],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ff0072"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier":"com.jibs.pediaqui"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "android":{
+      "package":"com.jibs.pediaqui"
+    }
+  }
+}
