@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 10,
         borderBottomLeftRadius:10,
     },
-    btn:{
+    buttonEntrar:{
         width: '90%',
         height: 45,
         backgroundColor: '#2bc44e',
@@ -77,9 +77,53 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5  
     },
+    buttonCadastrar: {
+        width: '90%',
+        height: 45,
+        backgroundColor: '#753FC4',
+        marginTop: 10,
+        borderRadius: 50, 
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: '#000',
+        shadowOffset:{
+            width: 5,
+            height: 5
+        },
+        shadowOpacity: 1,
+        shadowRadius: 4,
+        elevation: 5  
+    },
+    buttonFacebook:{
+        width: '90%',
+        height: 45,
+        backgroundColor: '#3B5998',
+        marginTop: 10,
+        borderRadius: 50, 
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: '#000',
+        shadowOffset:{
+            width: 5,
+            height: 5
+        },
+        shadowOpacity: 1,
+        shadowRadius: 4,
+        elevation: 5  
+    },
+    buttonSenha:{
+        marginTop: 10,
+        borderBottomColor: '#fff',
+        borderBottomWidth: 1
+    },
+    buttonTermos:{
+        marginTop: 180,
+        borderBottomColor: '#fff',
+        borderBottomWidth: 1
+    },
     text:{
-        fontSize: 16,
-        fontWeight: 'bold',
+        fontSize: 13,
+        //fontWeight: 'bold',
         color: '#fff'
     },
     logo:{

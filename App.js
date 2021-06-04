@@ -46,6 +46,7 @@ import Sett from './src/views/set'
   import General from './src/views/set/general'
 
 import Rating from './src/views/rating'
+import Register from './src/views/register';
 
 function TitleNull(){
   return(
@@ -59,7 +60,7 @@ const Drawer = createDrawerNavigator()
 function StackLogin(){
   return(
       <Stack.Navigator>  
-        <Stack.Screen name='Login'  component={Login}   options={{header: props =><TitleNull{...props}/>}} />
+        <Stack.Screen name='Login'  component={Register}   options={{header: props =><TitleNull{...props}/>}} />
       </Stack.Navigator>
   )
 }

@@ -125,25 +125,47 @@ function Login({navigation}){
         <View style={{flex: 1}}>
             <View style={styles.background}>
                 <Image source={logo} style={styles.logo}/>
-                <TextInput style={style.input} placeholder='Login' defaultValue={login} onChangeText={(text)=>setLogin(text)} keyboardType='email-address'/>
-                <View style={styles.view}>
-                    <TouchableOpacity style={styles.touchImage} onPress={()=>Visivel()} >
-                        <Image source={isVisible?invisible:visible } style={styles.image}/>
+                    <TextInput style={style.input} placeholder='Login' defaultValue={login} onChangeText={(text)=>setLogin(text)} keyboardType='email-address'/>
+                    <View style={styles.view}>
+                        <TouchableOpacity style={styles.touchImage} onPress={()=>Visivel()} >
+                            <Image source={isVisible?invisible:visible } style={styles.image}/>
+                        </TouchableOpacity>
+                        <TextInput style={style.inputPassword} placeholder='Senha' defaultValue={password} onChangeText={(text)=>setPassword(text)} secureTextEntry={isVisible?false:true}/>
+                    </View>
+                    <TouchableOpacity style={styles.buttonEntrar} onPress={()=>validateLogin()}>
+                        <Text style={style.text}>
+                            ENTRAR
+                        </Text>
                     </TouchableOpacity>
-                    <TextInput style={style.inputPassword} placeholder='Senha' defaultValue={password} onChangeText={(text)=>setPassword(text)} secureTextEntry={isVisible?false:true}/>
+                    <TouchableOpacity style={styles.buttonCadastrar}>
+                        <Text style={styles.text}>
+                            CADASTRAR
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonFacebook}>
+                        <Text style={styles.text}>
+                            LOGIN COM O FACEBOOK
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonSenha}>
+                        <Text style={styles.text}>
+                            ESQUECI MINHA SENHA
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonTermos}>
+                        <Text style={styles.text}>
+                            TERMOS E CONDIÇÕES DE USO
+                        </Text>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.btn} onPress={()=>validateLogin()}>
-                        <Text style={style.text}>ENTRAR</Text>
-                </TouchableOpacity>
-            </View>
         </View>
-    );
+    )
     }
 }
-
+                    
 export default Login
 
- const style = StyleSheet.create({
+const style = StyleSheet.create({
     input: {
         marginTop: 10,
         padding: 10,
