@@ -1,18 +1,103 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Switch, Alert, Picker, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, Switch, Alert, Picker, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import Constants from 'expo-constants';
 import * as Permissions from 'expo-permissions';
-import {Notifications} from 'expo';
-import {AppLoading} from 'expo'
-import {useFonts} from 'expo-font'
+import { Notifications } from 'expo';
+import { AppLoading } from 'expo'
+import { useFonts } from 'expo-font'
 
-import styles from './styles'
+import { FontAwesome } from '@expo/vector-icons';
+//import styles from './styles'
 import Item from '../../layouts/item_list'
 import ReqList from '../../layouts/lists/request'
+import Cesta from '../../assets/new_design/cesta.png'
 
 import api from '../../services/api'
 
+export default function Main() {
+    const [available, setAvailable] = useState();
+    const [load, setLoad] = useState(true);
+
+    let [fontLoad] = useFonts({
+        'Lexend-Regular':require('../../assets/fonts/Lexend/Lexend-Regular.ttf'),
+        'Lexend-Medium':require('../../assets/fonts/Lexend/Lexend-Medium.ttf'),
+    });
+
+    if(!fontLoad){
+        return <AppLoading />
+    }else{
+    return (
+        <View style={styles.container}>
+            <ScrollView>
+                <TouchableOpacity style={styles.button}>
+                    <View>
+                        <FontAwesome name="shopping-cart" size={40} color="#442178" style={styles.icon}/>
+                        <Text style={styles.text1}>Pedido</Text>
+                    </View>
+
+                    <View style={styles.description}>
+                        <Text style={styles.text}>Nome do estabelecimento</Text>
+                        <Text style={styles.text1}>Seu pedido esta em espera</Text>
+                        <Text style={styles.text1}>Clique para ver os detalhes</Text>
+                    </View>
+                    <View>
+                        <Text style={styles.text2}>
+                            R$ 19,99
+                        </Text>
+                    
+                    </View>
+                </TouchableOpacity >
+            </ScrollView>
+        </View>
+    )
+    }
+}
+            
+            
+
+const styles = StyleSheet.create({
+    container: {
+        //flex: 1,
+        //alignItems: 'center',
+        height: '100%'
+    },
+    description: {
+        marginLeft: 45
+    },
+    text: {
+        fontSize: 16,
+        fontFamily: 'Lexend-Medium'
+    },
+    text1: {
+        fontSize: 13,
+        fontFamily: 'Lexend-Regular',
+
+    },    
+    text2: {
+        fontSize: 13,
+        fontFamily: 'Lexend-Regular',
+        marginTop: 40,
+        marginLeft: 35
+    }, 
+        
+    button: {
+        borderColor: 'gray',
+        borderWidth: 1,
+        width: '100%',
+        height: 90,
+        //height: '100%',
+        flexDirection: 'row',
+        padding: 15
+    }
+        
+    
+ 
+})
+
+
+
+/*
 
 function Main({navigation, route}){
 
@@ -41,7 +126,7 @@ function Main({navigation, route}){
         await api.get(`/purchase/open/${loginEstablishment}`)
         .then(response=>{
             setList(response.data)
-            //console.log('getList: '+response.data)
+            console.log('getList: '+response.data)
         })
         .catch(error=>{
             console.log('getList: '+error)
@@ -136,11 +221,18 @@ function Main({navigation, route}){
             <View>
                 <ScrollView>
                     <View style={styles.viewSwitch}>
-                        <TouchableOpacity style={styles.miniTouch} onPress={()=>navigation.navigate('AllRequest', {loginEstablishment:loginEstablishment})}>
+                        <TouchableOpacity 
+                            style={styles.miniTouch} 
+                            onPress={()=>navigation.navigate('AllRequest', {loginEstablishment:loginEstablishment})}
+                        >
                             <Text style={stylesFont.textBtn}>VER TODOS</Text>
                         </TouchableOpacity>
                         <View style={styles.center}>
-                            <Switch onValueChange={()=>[setAvailable(!available), updateAvailable(establishment._id)]} value={available} thumbColor={available? '#442178':'#ccc' } />
+                            <Switch 
+                                onValueChange={()=>[setAvailable(!available), updateAvailable(establishment._id)]} 
+                                value={available} 
+                                thumbColor={available? '#442178':'#ccc' } 
+                            />
                             <Text style={stylesFont.text}>{available?'online':'offline'}</Text>
                         </View>
                     </View>
@@ -160,18 +252,18 @@ function Main({navigation, route}){
 export default Main;
 
 const stylesFont = StyleSheet.create({
-    text:{
-        fontSize:13,
-        color:'#000',
-        fontFamily:'Lexend-Regular'
-    },
-    textFilter:{
+    text: {
         fontSize: 13,
-        fontFamily:'Cocogoose-Light'
+        color: '#000',
+        fontFamily: 'Lexend-Regular'
     },
-    textBtn:{
-        fontSize:13,
-        color:'#fff',
-        fontFamily:'Lexend-Medium'
+    textFilter: {
+        fontSize: 13,
+        fontFamily: 'Cocogoose-Light'
     },
-})
+    textBtn: {
+        fontSize: 13,
+        color: '#fff',
+        fontFamily: 'Lexend-Medium'
+    },
+})*/

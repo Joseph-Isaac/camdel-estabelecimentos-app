@@ -48,6 +48,7 @@ import Sett from './src/views/set'
 import Rating from './src/views/rating'
 import Register from './src/views/register';
 
+
 function TitleNull(){
   return(
     <View></View>
@@ -60,25 +61,32 @@ const Drawer = createDrawerNavigator()
 function StackLogin(){
   return(
       <Stack.Navigator>  
-        <Stack.Screen name='Login'  component={Register}   options={{header: props =><TitleNull{...props}/>}} />
+        <Stack.Screen name='Login'  component={Login}   options={{header: props => <TitleNull{...props}/>}} />
       </Stack.Navigator>
   )
 }
 
 function StackList({navigation}){
   return(
-    <Stack.Navigator initialRouteName="List"
-    screenOptions={{
-      title: 'Pediaqui',
-      headerStyle:{
-        backgroundColor: '#442178'
-      },
-      headerTintColor: '#fff',
-      headerTitleAlign:'center',
-      headerRight: ()=>(
-        <TouchableOpacity style={styles.menu} onPress={()=> navigation.dispatch(DrawerActions.toggleDrawer())}><Feather name="menu" size={24} color="white"/></TouchableOpacity>
-      ),
-    }}>
+    <Stack.Navigator 
+      initialRouteName="List"
+      screenOptions={{
+        title: 'Pediaqui',
+        headerStyle:{
+          backgroundColor: '#442178'
+        },
+        headerTintColor: '#fff',
+        headerTitleAlign:'center',
+        headerRight: ()=>(
+          <TouchableOpacity 
+            style={styles.menu} 
+            onPress={()=> navigation.dispatch(DrawerActions.toggleDrawer())}
+          >
+            <Feather name="menu" size={24} color="white"/>
+          </TouchableOpacity>
+        ),
+      }}
+    >
       <Stack.Screen name="List" component={List}/>  
       <Stack.Screen name="Request" component={Request}/>  
       <Stack.Screen name="AllRequest" component={AllRequest}/>  
