@@ -1,4 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react-native';
+import {} from 'react-native';
+import Header from '../../components/header';
+
+export default function Main(){
+    return(
+        <Header/>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, Switch, Alert, Picker, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import Constants from 'expo-constants';
@@ -14,11 +38,13 @@ import ReqList from '../../layouts/lists/request'
 import Cesta from '../../assets/new_design/cesta.png'
 
 import api from '../../services/api'
+<<<<<<< HEAD
 import ButtonConfirm from '../../components/buttonConfirm';
 
 
 export default function Main({navigation,route}) {
     const {loginEstablishment} = route.params
+=
     const [available, setAvailable] = useState();
     const [load, setLoad] = useState(true);
     const [price, setPrice] = useState(19.9);
