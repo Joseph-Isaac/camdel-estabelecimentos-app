@@ -14,10 +14,14 @@ import ReqList from '../../layouts/lists/request'
 import Cesta from '../../assets/new_design/cesta.png'
 
 import api from '../../services/api'
+import ButtonConfirm from '../../components/buttonConfirm';
 
-export default function Main() {
+
+export default function Main({navigation,route}) {
+    const {loginEstablishment} = route.params
     const [available, setAvailable] = useState();
     const [load, setLoad] = useState(true);
+    const [price, setPrice] = useState(19.9);
 
     let [fontLoad] = useFonts({
         'Lexend-Regular':require('../../assets/fonts/Lexend/Lexend-Regular.ttf'),
@@ -30,7 +34,8 @@ export default function Main() {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <TouchableOpacity style={styles.button}>
+            
+                <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('AllRequest',{loginEstablishment:loginEstablishment})}>
                     <View>
                         <FontAwesome name="shopping-cart" size={40} color="#442178" style={styles.icon}/>
                         <Text style={styles.text1}>Pedido</Text>
@@ -43,12 +48,15 @@ export default function Main() {
                     </View>
                     <View>
                         <Text style={styles.text2}>
-                            R$ 19,99
+                            R$ {price}
                         </Text>
                     
                     </View>
+                   
                 </TouchableOpacity >
+                
             </ScrollView>
+            <ButtonConfirm/>
         </View>
     )
     }
@@ -58,8 +66,8 @@ export default function Main() {
 
 const styles = StyleSheet.create({
     container: {
-        //flex: 1,
-        //alignItems: 'center',
+        flex: 1,
+        alignItems: 'center',
         height: '100%'
     },
     description: {

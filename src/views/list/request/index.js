@@ -10,13 +10,10 @@ import api from '../../../services/api';
 function Main({route}){
 
     //Recebido de outras rotas
-    const {id} = route.params
+    
 
     //variáveis de uso do banco
-    const [user, setUser] = useState([])
-    const [trolleyInformations, setTrolleyInformations] = useState([])
-    const [trolley, setTrolley] = useState([])
-    const [purchase, setPurchase] = useState()
+    
     
     //variáveis de front
     const [load, setLoad] = useState(true)

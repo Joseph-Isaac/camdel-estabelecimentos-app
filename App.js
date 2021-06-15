@@ -47,6 +47,7 @@ import Sett from './src/views/set'
 
 import Rating from './src/views/rating'
 import Register from './src/views/register';
+import { Header } from 'react-native/Libraries/NewAppScreen';
 
 
 function TitleNull(){

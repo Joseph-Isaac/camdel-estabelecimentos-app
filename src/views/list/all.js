@@ -5,15 +5,16 @@ import * as Permissions from 'expo-permissions';
 import {Notifications} from 'expo';
 import {AppLoading} from 'expo'
 import {useFonts} from 'expo-font'
-
-import styles from './styles'
+import {FontAwesome} from '@expo/vector-icons';
+//import styles from './styles'
 import Item from '../../layouts/item_list'
 
 import api from '../../services/api'
+import Establishment from '../../components/establishment';
 
 
 function Main({navigation, route}){
-
+/*
     //recebido de outras telas
     const {loginEstablishment} = route.params
 
@@ -111,7 +112,7 @@ function Main({navigation, route}){
         .catch(e=>{
             console.log('erro ao gravar token: '+e)
         })
-    }
+    }*/
 
     let [fontLoad] = useFonts({
         'Lexend-Regular':require('../../assets/fonts/Lexend/Lexend-Regular.ttf'),
@@ -121,27 +122,9 @@ function Main({navigation, route}){
     if(!fontLoad){
         return <AppLoading />
     }else{
-        return (    
-            <View>
-                <ScrollView>
-                    <View style={styles.viewSwitch}>
-                        <TouchableOpacity style={styles.miniTouch} onPress={()=>navigation.navigate('AllRequest', {loginEstablishment:loginEstablishment})}>
-                            <Text style={stylesFont.textBtn}>VER TODOS</Text>
-                        </TouchableOpacity>
-                        <View style={styles.center}>
-                            <Switch onValueChange={()=>[setAvailable(!available), updateAvailable(establishment._id)]} value={available} thumbColor={available? '#442178':'#ccc' } />
-                            <Text style={stylesFont.text}>{available?'online':'offline'}</Text>
-                        </View>
-                    </View>
-                        
-                    {list.map(l => (
-                        <TouchableOpacity style={styles.container} onPress={()=> navigation.navigate('Request',{ id:l._id})}>
-                            <Item data={l}/>
-                        </TouchableOpacity>
-                    )).reverse()}
-                </ScrollView>
-            </View>
-        );
+        return(    
+            <Establishment/>
+        )
     }
 }
 
@@ -149,19 +132,5 @@ function Main({navigation, route}){
 export default Main;
 
 
-const stylesFont = StyleSheet.create({
-    text:{
-        fontSize: 13,
-        width: '90%',
-        fontFamily:'Lexend-Regular'
-    },
-    textFilter:{
-        fontSize: 18,
-        fontFamily:'Lexend-Regular'
-    },
-    textBtn:{
-        fontSize:13,
-        color:'#fff',
-        fontFamily:'Lexend-Regular'
-    },
-})
+
+    

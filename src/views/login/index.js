@@ -32,23 +32,23 @@ function Login({navigation}){
 
     //funções assíncronas que recuperam dados
     async function validateLogin(){
-        await api.get(`/establishment/acess/${login}/${password}`)
+        /*await api.get(`/establishment/acess/${login}/${password}`)
         .then(response=>{
             if(response.data == null){
                 getLoginForNick()
             }
             else    {
                 putLogin()
-                setEstablishment(response.data)
+                setEstablishment(response.data)*/
                 navigation.navigate('List',{
                     screen: 'List',
-                    params: {loginEstablishment: response.data.login}
+                    params: {loginEstablishment: "diasthalia10@gmail.com"}
                 })
-            }
+            /*}
         })
         .catch(error=>{
             console.log('validateLogin: '+error)
-        })
+        })*/
     }
 
     async function getLoginForNick(){
