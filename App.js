@@ -7,7 +7,7 @@ import {Feather} from '@expo/vector-icons'
 
 console.disableYellowBox = true;
 
-import menu from './src/assets/menu.png'
+
 
 import Login from './src/views/login'
 import Menu from './src/layouts/menu'
@@ -61,7 +61,7 @@ const Drawer = createDrawerNavigator()
 function StackLogin(){
   return(
       <Stack.Navigator>  
-        <Stack.Screen name='Login'  component={Login}   options={{header: props => <TitleNull{...props}/>}} />
+        <Stack.Screen name='Login'  component={Register}   options={{header: props => <TitleNull{...props}/>}} />
       </Stack.Navigator>
   )
 }
@@ -216,11 +216,5 @@ function DrawerNavigator(){
   )
 }
 
-const styles = StyleSheet.create({
-  menu:{
-    marginRight:10,
-  }
-});
 
 
-export default DrawerNavigator

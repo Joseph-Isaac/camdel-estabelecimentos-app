@@ -22,7 +22,7 @@ function Login({navigation}){
     //states para o front
     const [load, setLoad] = useState(true)
 
-
+    /*
     //useEffect
     useEffect(()=>{
         getLogin()
@@ -109,7 +109,7 @@ function Login({navigation}){
         }catch(e){
             console.log('getLogin: '+e)
         }
-    }
+    }*/
 
     let [fontLoad] = useFonts({
         'Lexend-Regular':require('../../assets/fonts/Lexend/Lexend-Regular.ttf'),
@@ -132,7 +132,7 @@ function Login({navigation}){
                         </TouchableOpacity>
                         <TextInput style={style.inputPassword} placeholder='Senha' defaultValue={password} onChangeText={(text)=>setPassword(text)} secureTextEntry={isVisible?false:true}/>
                     </View>
-                    <TouchableOpacity style={styles.buttonEntrar} onPress={()=>validateLogin()}>
+                    <TouchableOpacity style={styles.buttonEntrar}  onPress={()=>validateLogin()}>
                         <Text style={style.text}>
                             ENTRAR
                         </Text>
