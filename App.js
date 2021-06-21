@@ -48,6 +48,8 @@ import Sett from './src/views/set'
 import Rating from './src/views/rating'
 import Register from './src/views/register';
 import { Header } from 'react-native/Libraries/NewAppScreen';
+import Establishment from './src/components/establishment';
+import AdditionalProducts from './src/views/additionalProducts';
 
 
 function TitleNull(){
@@ -62,7 +64,8 @@ const Drawer = createDrawerNavigator()
 function StackLogin(){
   return(
       <Stack.Navigator>  
-        <Stack.Screen name='Login'  component={Register}   options={{header: props => <TitleNull{...props}/>}} />
+        <Stack.Screen name='Login'  component={Login}   options={{header: props => <TitleNull{...props}/>}} />
+        
       </Stack.Navigator>
   )
 }
@@ -177,7 +180,7 @@ function StackSet({navigation}){
 
 function StackRating(){
   return(
-  <Stack.Navigator initialRouteName='Rating'
+  <Stack.Navigator initialRouteName='Register'
     screenOptions={{
       title: 'Pediaqui',
       headerStyle:{
@@ -189,7 +192,7 @@ function StackRating(){
         <TouchableOpacity style={styles.menu} onPress={()=> navigation.dispatch(DrawerActions.toggleDrawer())}><Feather name="menu" size={24} color="white"/></TouchableOpacity>
       ),
     }}>
-      <Stack.Screen name='Rating' component={Rating} />
+      <Stack.Screen name='Register' component={AdditionalProducts} />
     </Stack.Navigator>
   )
 }
@@ -217,5 +220,12 @@ function DrawerNavigator(){
   )
 }
 
+const styles = StyleSheet.create({
+  menu:{
+    marginRight:10,
+  }
+});
 
+
+export default DrawerNavigator
 

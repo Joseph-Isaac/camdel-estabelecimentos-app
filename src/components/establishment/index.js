@@ -36,17 +36,16 @@ export default function Establishment(){
                     <FontAwesome name="money" size={24} color="#FFF" /> 
                     <DeliveryFee>{serviceCharge}{"\n"}Para sua casa</DeliveryFee>
                 </Box>
-                
                 <Box>
                     <ButtonInformation>
                         <MaterialCommunityIcons name="information-outline" size={24} color="#FFF" />
                         <EstablishmentInformation>Informações do estabelecimento</EstablishmentInformation>
                     </ButtonInformation>
                 </Box>
-                
             </BoxInformation>
         </Container>
     )
 }
+                
 
 

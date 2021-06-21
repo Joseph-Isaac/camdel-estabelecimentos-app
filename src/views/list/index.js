@@ -1,10 +1,10 @@
-import React from 'react-native';
-import {} from 'react-native';
-import Header from '../../components/header';
+import React from 'react';
+import {View} from 'react-native';
+import Requests from '../../components/requests';
 
 export default function Main(){
     return(
-        <Header/>
+        <Requests/>
     )
 }
 

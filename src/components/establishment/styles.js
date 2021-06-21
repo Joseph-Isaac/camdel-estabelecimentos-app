@@ -11,7 +11,7 @@ export const BoxEstablishment = styled.View`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*background-color: aquamarine;*/
+    
     width: 50%;
     height: 250;
 `;

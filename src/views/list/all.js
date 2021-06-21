@@ -127,7 +127,7 @@ function Main({navigation, route}){
         )
     }
 }
-
+                
 //make this component available to the app
 export default Main;
 

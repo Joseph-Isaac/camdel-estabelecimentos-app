@@ -22,13 +22,9 @@ function Login({navigation}){
     //states para o front
     const [load, setLoad] = useState(true)
 
-    /*
+    
     //useEffect
-    useEffect(()=>{
-        getLogin()
-        //alert(AsyncStorage.getItem(JSON.stringify('@login')))
-        navigation.addListener('focus', ()=>[setLoad(!load)])
-    }, [load, navigation])
+    
 
     //funções assíncronas que recuperam dados
     async function validateLogin(){
@@ -50,22 +46,8 @@ function Login({navigation}){
             console.log('validateLogin: '+error)
         })*/
     }
-
-    async function getLoginForNick(){
-        await api.get(`/establishment/loginForNick/${login}/${password}`)
-        .then(res=>{
-            if(res.data===null)
-                Alert.alert('','login ou senha incorreto')
-            else{
-                putLogin()
-                setEstablishment(res.data)
-                navigation.navigate('List',{
-                    screen: 'List',
-                    params: {loginEstablishment: res.data.login}
-                })
-            } 
-        })
-    }
+    
+    
 
     function Visivel(){
         if(isVisible)
@@ -73,43 +55,7 @@ function Login({navigation}){
         else    
         setVisible(true)
     }
-
-    //Outras funções
-    async function putLogin(){
-        try{
-            await AsyncStorage.setItem('@login', login)
-            await AsyncStorage.setItem('@password', password)
-        }
-        catch(e){
-            console.log('Login'+e)
-        }
-    }
-
-    async function putNick(log, pass){
-        try{
-            //alert(log)
-            await AsyncStorage.setItem('@login', log.toString())
-            await AsyncStorage.setItem('@password', pass.toString())
-            await navigation.navigate('List',{
-                screen: 'List',
-                params: {loginEstablishment: log}
-            })
-        }
-        catch(e){
-            console.log('Login'+e)
-        }   
-    }
-
-    async function getLogin(){
-        try{
-            //alert((JSON.stringify(AsyncStorage.getItem('@login'))))
-            setLogin(await AsyncStorage.getItem('@login'))
-            setPassword(await AsyncStorage.getItem('@password'))
-            validateLogin()
-        }catch(e){
-            console.log('getLogin: '+e)
-        }
-    }*/
+    
 
     let [fontLoad] = useFonts({
         'Lexend-Regular':require('../../assets/fonts/Lexend/Lexend-Regular.ttf'),
@@ -132,7 +78,7 @@ function Login({navigation}){
                         </TouchableOpacity>
                         <TextInput style={style.inputPassword} placeholder='Senha' defaultValue={password} onChangeText={(text)=>setPassword(text)} secureTextEntry={isVisible?false:true}/>
                     </View>
-                    <TouchableOpacity style={styles.buttonEntrar}  onPress={()=>validateLogin()}>
+                    <TouchableOpacity style={styles.buttonEntrar}  onPress={()=>navigation.navigate('List')}>
                         <Text style={style.text}>
                             ENTRAR
                         </Text>

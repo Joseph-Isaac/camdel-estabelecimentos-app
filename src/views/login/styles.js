@@ -2,7 +2,7 @@ import {StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -117,7 +117,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1
     },
     buttonTermos:{
-        marginTop: 180,
+        //marginTop: 180,
+        position: 'absolute',
         borderBottomColor: '#fff',
         borderBottomWidth: 1
     },
