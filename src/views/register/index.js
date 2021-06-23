@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import visible from '../../assets/visible.png'
 import invisible from '../../assets/invisible.png'
-import Input from '../../components/Input';
+import Input from '../../components/Input/Input'
 import styles from './styles'; 
 
 export default function Register() {

@@ -50,6 +50,7 @@ import Register from './src/views/register';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import Establishment from './src/components/establishment';
 import AdditionalProducts from './src/views/additionalProducts';
+import Sale from './src/views/Sale';
 
 
 function TitleNull(){
@@ -192,7 +193,7 @@ function StackRating(){
         <TouchableOpacity style={styles.menu} onPress={()=> navigation.dispatch(DrawerActions.toggleDrawer())}><Feather name="menu" size={24} color="white"/></TouchableOpacity>
       ),
     }}>
-      <Stack.Screen name='Register' component={AdditionalProducts} />
+      <Stack.Screen name='Register' component={Sale} />
     </Stack.Navigator>
   )
 }

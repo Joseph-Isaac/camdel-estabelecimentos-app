@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import {Container, BoxProduct, ProductName, DetailsProduct, BoxPrices, Amount, Title, Additional, 
-    ButtonAdd, ButtonReduce, ImageProduct, Img, BoxComments, Comments, UnitPrice, TotalPrice, Price, Elements} from './styles';
+ButtonAdd, ButtonReduce, ImageProduct, Img, BoxComments, Comments, UnitPrice, TotalPrice, Price, Elements} from './styles';
+
 import { FontAwesome5 } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+
 import Hamburguer from '../../images/hamburguer.png'
 
-import { AntDesign } from '@expo/vector-icons';
 
 export default function AdditionalProducts(){
     const [count, setCount] = useState(0);
-    
+    const [prices, setPrices] = useState(19.99);
+
     return(
         <Container>
             <ImageProduct>
@@ -42,11 +45,11 @@ export default function AdditionalProducts(){
                 </Amount>
                 <UnitPrice>
                     <Title>Preço Unitário</Title>
-                    <Price>R$ 19,99</Price>
+                    <Price>R$ {prices}</Price>
                 </UnitPrice>
                 <TotalPrice>
                     <Title>Preço Total</Title>
-                    <Price>R$ 19,99</Price>
+                    <Price>R$ {prices}</Price>
                 </TotalPrice>
             </BoxPrices>    
                     

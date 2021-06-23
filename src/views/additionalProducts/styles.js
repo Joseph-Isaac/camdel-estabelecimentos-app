@@ -75,8 +75,8 @@ export const ButtonReduce = styled.TouchableOpacity`
 export const Title = styled.Text`
     font-size: 13;
     font-family: Lexend-Regular;
-    margin-top: 5;
-    margin-bottom: 5;
+    
+    
     
 `;
 
@@ -85,18 +85,22 @@ export const Price = styled.Text`
     font-family: Lexend-Regular;
     margin-top: 5;
     margin-bottom: 5;
-    margin-left: 250;
+    
     color: green;
 `;
 
 export const TotalPrice = styled.View`
     flex-direction: row;
-    margin-bottom: 15;
+    margin-bottom: 10;
+    justify-content: space-between;
+    width: 95%;
 `;
 
 export const UnitPrice = styled.View`
     flex-direction: row;
-    margin-bottom: 15;
+    margin-bottom: 10;
+    justify-content: space-between;
+    width: 95%;
 `;
 
 export const BoxComments = styled.View`
