@@ -193,7 +193,7 @@ function StackRating(){
         <TouchableOpacity style={styles.menu} onPress={()=> navigation.dispatch(DrawerActions.toggleDrawer())}><Feather name="menu" size={24} color="white"/></TouchableOpacity>
       ),
     }}>
-      <Stack.Screen name='Register' component={Sale} />
+      <Stack.Screen name='Register' component={AdditionalProducts} />
     </Stack.Navigator>
   )
 }

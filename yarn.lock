@@ -1171,7 +1171,7 @@
   dependencies:
     deep-assign "^3.0.0"
 
-"@react-native-community/checkbox@^0.5.7":
+"@react-native-community/checkbox@^0.5.8":
   version "0.5.8"
   resolved "https://registry.yarnpkg.com/@react-native-community/checkbox/-/checkbox-0.5.8.tgz#a1b50635fd76a07fb53eb4a98120347cb6e75da4"
   integrity sha512-2ppw40sSqBKSPz75l8rDCvpcvQb/78MtvB5BDtovsJE1kXoUJP4eVLuyLo+LfYdSK9qLD4Llt4bIulr1SI9UIQ==
@@ -2658,6 +2658,11 @@ expo-camera@~8.3.1:
     invariant "2.2.4"
     lodash "^4.6.0"
     prop-types "^15.6.0"
+
+expo-checkbox@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/expo-checkbox/-/expo-checkbox-1.0.3.tgz#1d7510947814b19fc710fb7fc80a2433d98e3cc3"
+  integrity sha512-7w8H1yt7V1pdnbIAIoV3RvI+Rjzc8nlxy4eKdEtZhYupenLmBY173glAx+/eJcW/vlCqKYHxedQmRTqEUpAQ7A==
 
 expo-constants@9.1.1, expo-constants@~9.1.1:
   version "9.1.1"

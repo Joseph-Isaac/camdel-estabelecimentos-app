@@ -15,11 +15,7 @@ export const ImageProduct = styled.View`
     justify-content: center;
 `;
 
-export const Img = styled.Image`
-    flex: 1;
-    width: 100%;
-    
-`;
+
  
 export const BoxProduct = styled.View`
     height: 12%;
@@ -29,6 +25,26 @@ export const BoxProduct = styled.View`
     justify-content: center;
     border-bottom-width: 1;
     border-bottom-color: #D3D3D3;
+    
+`;
+
+export const BoxAdditional = styled.View`
+    height: 50%;
+    
+    background-color: #FFF;
+    align-items: flex-start;
+    
+`;
+
+export const BoxCheck = styled.View`
+    
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FFF;
+    justify-content: center;
+    align-items: center;
+    
+    
 `;
 
 export const ProductName = styled.Text`
@@ -63,11 +79,6 @@ export const Additional = styled.View`
     margin-top: 10;
     
 `;
-
-export const ButtonAdd = styled.TouchableOpacity`
-    right: 20
-`;
-
 export const ButtonReduce = styled.TouchableOpacity`
     left: 20;
 `;
@@ -125,3 +136,13 @@ export const Elements = styled.Text`
     font-size: 13;
     font-family: Lexend-Regular;
 `;
+
+export const TitleAdditional = styled(Title)`
+    margin-left: 2;
+`;
+export const ButtonAdd = styled.TouchableOpacity`
+    right: 20
+`;
+
+
+

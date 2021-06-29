@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import {Container, BoxEstablishment, Company, Category, BoxInformation, FoodValue, 
 DeliveryTime, DeliveryFee, EstablishmentInformation, ButtonInformation, Box} from './styles';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import ButtonProduct from '../buttonProduct';
 
 export default function Establishment(){
     // Primeira Caixa
@@ -17,7 +19,8 @@ export default function Establishment(){
     const [serviceCharge, setServiceCharge] = useState(3.99)
 
     return(
-        <Container>
+        <ScrollView>
+            <Container>
             <BoxEstablishment>
                 <FontAwesome5 name="hamburger" size={100} color="#fff" />
                 <Company>{nameCompany}</Company>
@@ -37,13 +40,24 @@ export default function Establishment(){
                     <DeliveryFee>{serviceCharge}{"\n"}Para sua casa</DeliveryFee>
                 </Box>
                 <Box>
-                    <ButtonInformation>
+                    <ButtonInformation activeOpacity={0.8}>
                         <MaterialCommunityIcons name="information-outline" size={24} color="#FFF" />
                         <EstablishmentInformation>Informações do estabelecimento</EstablishmentInformation>
                     </ButtonInformation>
                 </Box>
             </BoxInformation>
+        
         </Container>
+
+        <ButtonProduct  title="Produto com adicional"/>
+        <ButtonProduct  title="Produto com adicional"/>
+        <ButtonProduct  title="Produto com adicional"/>
+        <ButtonProduct  title="Produto com adicional"/>
+        <ButtonProduct  title="Produto com adicional"/>
+
+        </ScrollView>
+        
+
     )
 }
                 
